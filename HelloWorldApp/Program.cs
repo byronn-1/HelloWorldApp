@@ -71,5 +71,14 @@ namespace HelloWorldApp
                 Console.WriteLine("Name: {0}, Grade: {1}", studentNames[i], studentGrades[i]);
                 }
         }
+        class Student
+        {
+            public string Name;
+            public int Grade;
+            public string Birthday;
+            public string Address;
+            public int Phone;
+        }
+
     }
 }
