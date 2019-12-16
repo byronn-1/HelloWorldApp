@@ -8,10 +8,10 @@ namespace HelloWorldApp
         static void Main(string[] args)
         {
 
-            
+
             //for(int X = 1; X <= 5; X++)
             //{
-            
+
             //    for (int i = 1; i <= 10; i++)
             //    {
             //        Console.WriteLine("Hello World " + i);
@@ -49,27 +49,43 @@ namespace HelloWorldApp
             //{
             //    Console.WriteLine("You didn't write anything, please try again.");
 
-            var studentNames = new List<string>();
-            var studentGrades = new List<int>();
+            var students = new List<Student>();
+
+            //var studentNames = new List<string>();
+            //var studentGrades = new List<int>();
 
             var adding = true;
+
             while (adding)
             {
+                var newStudent = new Student();
+
                 Console.Write("Student Name: ");
-                studentNames.Add(Console.ReadLine());
+                newStudent.Name = Console.ReadLine();
 
                 Console.Write("Student Grade: ");
-                studentGrades.Add(int.Parse(Console.ReadLine()));
+                newStudent.Grade = int.Parse(Console.ReadLine());
+
+                Console.Write("Student Birthday: ");
+                newStudent.Birthday = Console.ReadLine();
+
+                Console.Write("Student Address: ");
+                newStudent.Address = Console.ReadLine();
+
+                Console.Write("Student Phone Number: ");
+                newStudent.Phone = Console.ReadLine();
+
+                students.Add(newStudent);
 
                 Console.WriteLine("Add another? y/n");
 
                 if (Console.ReadLine() != "y")
                     adding = false;
             }
-            for (int i = 0; i < studentNames.Count; i++)
+            foreach (var student in students)
             {
-                Console.WriteLine("Name: {0}, Grade: {1}", studentNames[i], studentGrades[i]);
-                }
+                Console.WriteLine("Name: {0}, Grade: {1}, Birthday: {2}, Address: {3}, Phone Number: {4} ", student.Name, student.Grade, student.Birthday, student.Address, student.Phone);
+            }
         }
         class Student
         {
@@ -77,7 +93,7 @@ namespace HelloWorldApp
             public int Grade;
             public string Birthday;
             public string Address;
-            public int Phone;
+            private string Phone;
         }
 
     }
