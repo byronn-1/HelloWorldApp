@@ -84,16 +84,27 @@ namespace HelloWorldApp
             }
             foreach (var student in students)
             {
-                Console.WriteLine("Name: {0}, Grade: {1}, Birthday: {2}, Address: {3}, Phone Number: {4} ", student.Name, student.Grade, student.Birthday, student.Address, student.Phone);
+                Console.WriteLine("Name: {0}, Grade: {1}, Birthday: {2}, Address: {3}, Phone Number: {4} ", student.Name, student.Grade, student.Birthday, student.Address, student.phone);
             }
         }
         class Student
         {
+            
+
             public string Name;
             public int Grade;
             public string Birthday;
             public string Address;
-            private string Phone;
+            private string phone;
+
+            public string Phone
+            {
+                set { phone = value; }
+            }
+            public void SetPhone(string number)
+            {
+                phone = number;
+            }
         }
 
     }
