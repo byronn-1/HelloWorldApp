@@ -7,7 +7,11 @@ namespace HelloWorldApp
     {
         static void Main(string[] args)
         {
-
+            static void Import()
+            {
+                var importedStudent = new Student("Jenny", 86, "birthday", "address");
+                Console.WriteLine(importedStudent.Name);
+            }
 
             //for(int X = 1; X <= 5; X++)
             //{
@@ -61,8 +65,8 @@ namespace HelloWorldApp
                 var newStudent = new Student();
 
                 newStudent.Name = Util.Console.Ask("Student Name: ");
-                
-                newStudent.Grade = int.Parse(Util.Console.Ask("Student Grade: "););
+
+                newStudent.Grade = int.Parse(Util.Console.Ask("Student Grade: "));
 
                 newStudent.Birthday = Util.Console.Ask("Student Birthday: ");
 
@@ -87,7 +91,7 @@ namespace HelloWorldApp
         }
         class Student
         {
-            static public int Count;
+            static public int Count = 0 ;
 
             public string Name;
             public int Grade;
@@ -104,6 +108,18 @@ namespace HelloWorldApp
             //{
             //    phone = phoneNumber;
             //}
+            public Student()
+            {
+
+            }
+            public Student(string name, int grade, string birthday, string address)
+            {
+                Console.WriteLine("constructor");
+                Name = name;
+                Grade = grade;
+                Birthday = birthday;
+                Address = address;
+            }
         }
 
     }
