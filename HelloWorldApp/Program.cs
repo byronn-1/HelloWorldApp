@@ -72,10 +72,12 @@ namespace HelloWorldApp
                 Console.Write("Student Address: ");
                 newStudent.Address = Console.ReadLine();
 
-                Console.Write("Student Phone Number: ");
-                newStudent.Phone = Console.ReadLine();
+                //Console.Write("Student Phone Number: ");
+                //newStudent.SetPhone( Console.ReadLine());
 
                 students.Add(newStudent);
+                Student.Count++;
+                Console.WriteLine("Student Count: {0}", Student.Count);
 
                 Console.WriteLine("Add another? y/n");
 
@@ -84,27 +86,28 @@ namespace HelloWorldApp
             }
             foreach (var student in students)
             {
-                Console.WriteLine("Name: {0}, Grade: {1}, Birthday: {2}, Address: {3}, Phone Number: {4} ", student.Name, student.Grade, student.Birthday, student.Address, student.phone);
+                Console.WriteLine("Name: {0}, Grade: {1}, Birthday: {2}, Address: {3} ", student.Name, student.Grade, student.Birthday, student.Address);
             }
         }
         class Student
         {
-            
+            static public int Count;
 
             public string Name;
             public int Grade;
             public string Birthday;
             public string Address;
-            private string phone;
+            //private string phone;
 
-            public string Phone
-            {
-                set { phone = value; }
-            }
-            public void SetPhone(string number)
-            {
-                phone = number;
-            }
+            //public string Phone
+            //{
+            //    set { phone = value; }
+
+            //}
+            //public void SetPhone(string phoneNumber)
+            //{
+            //    phone = phoneNumber;
+            //}
         }
 
     }
